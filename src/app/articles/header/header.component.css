@@ -1,0 +1,62 @@
+header {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+}
+
+.header-background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 300%;
+  pointer-events: none;
+  z-index: 6;
+  transform: translateZ(0) translateY(-30%);
+}
+
+.header-background > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.header-background div:nth-child(1) {
+  backdrop-filter: blur(1px);
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 0, #fff 12.5%, #fff 37.5%, hsla(0, 0%, 100%, 0) 50%);
+  z-index: 2;
+}
+
+.header-background div:nth-child(2) {
+  backdrop-filter: blur(2px);
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 12.5%, #fff 37.5%, #fff 50%, hsla(0, 0%, 100%, 0) 62.5%);
+  z-index: 3;
+}
+
+.header-background div:nth-child(3) {
+  backdrop-filter: blur(4px);
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 37.5%, #fff 50%, #fff 62.5%, hsla(0, 0%, 100%, 0) 75%);
+  z-index: 4;
+}
+
+.header-background div:nth-child(4) {
+  backdrop-filter: blur(8px);
+  mask: linear-gradient(0deg, hsla(0, 0%, 100%, 0) 50%, #fff 62.5%, #fff 75%, hsla(0, 0%, 100%, 0) 87.5%);
+  z-index: 5;
+}
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  z-index: 7;
+}
+
+app-menu-hamburger {
+  z-index: 7;
+}
