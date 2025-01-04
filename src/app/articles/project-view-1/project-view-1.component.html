@@ -1,0 +1,24 @@
+<div class="project-view-1" (wheel)="onScroll($event)" [ngStyle]="{ background: color[currentScreen - 1]}">
+  <section class="introduction" *ngIf="currentScreen === 1">
+    <h1>Introduccion</h1>
+  </section>
+
+  <section class="content" *ngIf="currentScreen === 2">
+    <h1>Contenido</h1>
+  </section>
+
+  <section class="photo" *ngIf="currentScreen === 3">
+    <h1>Fotos</h1>
+  </section>
+
+  <section class="end" *ngIf="currentScreen === 4">
+    <h1>Fin</h1>
+  </section>
+
+  <div class="progress-indicator">
+    <span [class.active]="currentScreen === 1"></span>
+    <span [class.active]="currentScreen === 2"></span>
+    <span [class.active]="currentScreen === 3"></span>
+    <span [class.active]="currentScreen === 4"></span>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<section class="skill">
+  <div class="content">
+    <h2 class="title">¿Que es lo que se hacer?</h2>
+    <div class="skill-list">
+      <ul>
+        <li *ngFor="let skill of skillsList; let i = index" [ngStyle]="{ transform: 'translateX(' + offsetsSkills[i] + 'px)'}">
+          <h4 *ngIf="skill != '-'" class="skill-item">{{skill}}</h4>
+          <div *ngIf="skill == '-'" class="skill-bar"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="background bg-color"></div>
+</section>

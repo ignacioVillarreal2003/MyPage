@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  background: #f76c6c;
+  transition: all .3s ease;
+}
+
+.project-preview-1, .project-preview-2, .project-preview-3, .project-preview-4 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: fadeInFromLeft 0.8s forwards;
+}
+
+@keyframes fadeInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.container > section {
+  transition: opacity 0.8s ease-in-out;
+}
+
+.progress-indicator {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-indicator span {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  transition: background-color 1s;
+}
+
+.progress-indicator span.active {
+  background-color: red;
+}

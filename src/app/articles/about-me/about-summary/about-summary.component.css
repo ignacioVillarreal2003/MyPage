@@ -1,0 +1,42 @@
+.about-summary {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-summary .content {
+  width: 100%;
+  height: 100%;
+  padding: 50vh 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-summary .content h2 {
+  font-size: clamp(35px, 5vw, 60px);
+  color: white;
+  margin-bottom: 50px;
+}
+
+.about-summary .answer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.about-summary .answer p {
+  color: white;
+  font-size: clamp(14px, 3vw, 22px);
+}
+
+.about-summary .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background: #000000;
+}

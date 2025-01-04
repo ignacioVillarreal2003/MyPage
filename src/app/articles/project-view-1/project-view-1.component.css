@@ -1,0 +1,64 @@
+.project-view-1 {
+    width: 100%;
+    transition: all .3s ease;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 3rem;
+  opacity: 0;
+  transform: translatey(-100%);
+  animation: fadeInFromLeft 0.8s forwards;
+}
+
+@keyframes fadeInFromLeft {
+  to {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+.introduction {
+  height: 100vh;
+}
+
+.content {
+  height: 100vh;
+}
+
+.photo {
+  height: 200vh;
+}
+
+.end {
+  height: 100vh;
+}
+
+.progress-indicator {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-indicator span {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  transition: background-color 1s;
+}
+
+.progress-indicator span.active {
+  background-color: red;
+}
