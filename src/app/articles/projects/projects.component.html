@@ -1,4 +1,4 @@
-<div class="container" (wheel)="onScroll($event)" [ngStyle]="{ background: color[currentScreen - 1]}">
+<div class="container" (wheel)="onScroll($event)" [ngStyle]="{ background: backgroundColors[currentScreen - 1]}">
   <section class="project-preview-1" *ngIf="currentScreen === 1">
     <h1>Proyecto 1</h1>
   </section>
@@ -11,11 +11,27 @@
   <section class="project-preview-4" *ngIf="currentScreen === 4">
     <h1>Proyecto 4</h1>
   </section>
+  <section class="project-preview-5" *ngIf="currentScreen === 5">
+    <h1>Proyecto 5</h1>
+  </section>
+  <section class="project-preview-6" *ngIf="currentScreen === 6">
+    <h1>Proyecto 6</h1>
+  </section>
+  <section class="project-preview-7" *ngIf="currentScreen === 7">
+    <h1>Proyecto 7</h1>
+  </section>
+  <section class="project-preview-8" *ngIf="currentScreen === 8">
+    <h1>Proyecto 8</h1>
+  </section>
 
   <div class="progress-indicator">
-    <span [class.active]="currentScreen === 1"></span>
-    <span [class.active]="currentScreen === 2"></span>
-    <span [class.active]="currentScreen === 3"></span>
-    <span [class.active]="currentScreen === 4"></span>
+    <button [class.active]="currentScreen === 1" (click)="currentScreen = 1; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 2" (click)="currentScreen = 2; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 3" (click)="currentScreen = 3; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 4" (click)="currentScreen = 4; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 5" (click)="currentScreen = 5; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 6" (click)="currentScreen = 6; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 7" (click)="currentScreen = 7; changeHeaderColor()"></button>
+    <button [class.active]="currentScreen === 8" (click)="currentScreen = 8; changeHeaderColor()"></button>
   </div>
 </div>

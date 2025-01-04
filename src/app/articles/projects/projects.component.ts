@@ -14,9 +14,9 @@ import {BackgroundDetectorService} from '../../services/background-detector.serv
 })
 export class ProjectsComponent {
 
-  color: string[] = ['#faabab', '#7cccbe', '#97c2d9', '#acabab'];
+  backgroundColors: string[] = ['#f76c6c', '#faabab', '#7cccbe', '#97c2d9', '#b1c0cb', '#70d1aa', '#403d66', '#4e61bd'];
   currentScreen: number = 1;
-  totalScreens: number = 4;
+  totalScreens: number = 8;
 
   constructor(private backgroundService: BackgroundDetectorService) {}
 
@@ -34,6 +34,6 @@ export class ProjectsComponent {
   }
 
   changeHeaderColor() {
-    this.backgroundService.setActiveBackgroundColor(this.color[this.currentScreen - 1]);
+    this.backgroundService.setActiveBackgroundColor(this.backgroundColors[this.currentScreen - 1]);
   }
 }

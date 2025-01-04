@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
-import {NgIf, NgStyle} from '@angular/common';
+import {NgForOf, NgIf, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-project-view-1',
   imports: [
     NgIf,
-    NgStyle
+    NgStyle,
+    NgForOf
   ],
   templateUrl: './project-view-1.component.html',
   standalone: true,
   styleUrl: './project-view-1.component.css'
 })
 export class ProjectView1Component {
-  color: string[] = ['#faabab', '#7cccbe', '#97c2d9', '#f76c6c'];
+  backgroundColors: string[] = ['#faabab', '#7cccbe', '#97c2d9', '#f76c6c'];
 
   currentScreen = 1;
   totalScreens = 4;
   isScrolling = false;
+  progressStep = 0; // Paso intermedio de la animación
 
   onScroll(event: WheelEvent) {
     if (this.isScrolling) return;
@@ -65,5 +67,24 @@ export class ProjectView1Component {
       return 200 * window.innerHeight / 100; // 200vh
     }
     return window.innerHeight; // Para las secciones normales de 100vh
+  }
+
+  navigateToScreen(targetScreen: number): void {
+    if (targetScreen === this.currentScreen) return;
+
+    const direction = targetScreen > this.currentScreen ? 1 : -1;
+    const steps = Math.abs(targetScreen - this.currentScreen) * 3;
+
+    let stepIndex = 0;
+
+    const interval = setInterval(() => {
+      this.progressStep += direction;
+
+      if (++stepIndex === steps) {
+        clearInterval(interval);
+        this.currentScreen = targetScreen;
+        this.progressStep = 0; // Resetear los pasos intermedios
+      }
+    }, 400); // Tiempo entre cada cambio (0.4s)
   }
 }

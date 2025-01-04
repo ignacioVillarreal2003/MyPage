@@ -15,17 +15,7 @@ import {BackgroundDetectorService} from '../../services/background-detector.serv
 export class HeaderComponent {
 
   isNavBarActive: boolean = false;
-
-  toggleNavBar(event: Event): void {
-    const checkbox: HTMLInputElement = event.target as HTMLInputElement;
-    this.isNavBarActive = checkbox.checked;
-    const body: HTMLElement = document.querySelector('body') as HTMLElement;
-    if (checkbox.checked) {
-      body.style.overflowY = 'hidden';
-    } else {
-      body.style.overflowY = 'auto';
-    }
-  }
+  lastColor: string = "";
 
   constructor(private backgroundService: BackgroundDetectorService,
               private el: ElementRef) {}
@@ -36,10 +26,11 @@ export class HeaderComponent {
 
     linkElement.forEach((element: HTMLElement): void => {
       this.backgroundService.activeBackgroundColor$.subscribe((color): void => {
-        if (this.isColorDark(color)) {
-          element.style.color = 'white';
-        } else {
+        console.log(color)
+        if (this.isWhite(color)) {
           element.style.color = 'black';
+        } else {
+          element.style.color = 'white';
         }
       });
     })
@@ -49,19 +40,26 @@ export class HeaderComponent {
         if (this.isWhite(color)) {
           element.style.stroke = 'black';
         } else {
+          if (color !== '#faabab') {
+            this.lastColor = color;
+          }
           element.style.stroke = color;
         }
       });
     })
   }
 
-  isColorDark(color: string): boolean {
-    const match = color.match(/\d+/g);
-    if (!match) return false;
-
-    const [r, g, b] = match.map(Number);
-    const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    return luminance < 128;
+  toggleNavBar(event: Event): void {
+    const checkbox: HTMLInputElement = event.target as HTMLInputElement;
+    this.isNavBarActive = checkbox.checked;
+    const body: HTMLElement = document.querySelector('body') as HTMLElement;
+    if (checkbox.checked) {
+      this.backgroundService.setActiveBackgroundColor('#faabab')
+      body.style.overflowY = 'hidden';
+    } else {
+      this.backgroundService.setActiveBackgroundColor(this.lastColor)
+      body.style.overflowY = 'auto';
+    }
   }
 
   isWhite(color: string): boolean {
