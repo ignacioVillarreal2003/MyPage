@@ -17,6 +17,7 @@ export class ProjectsComponent {
   backgroundColors: string[] = ['#f76c6c', '#faabab', '#7cccbe', '#97c2d9', '#b1c0cb', '#70d1aa', '#403d66', '#4e61bd'];
   currentScreen: number = 1;
   totalScreens: number = 8;
+  isScrolling = false;
 
   constructor(private backgroundService: BackgroundDetectorService) {}
 
@@ -25,6 +26,10 @@ export class ProjectsComponent {
   }
 
   onScroll(event: WheelEvent) {
+    if (this.isScrolling) return;
+    this.isScrolling = true;
+    setTimeout(() => (this.isScrolling = false), 800);
+
     if (event.deltaY > 0 && this.currentScreen < this.totalScreens) {
       this.currentScreen++;
     } else if (event.deltaY < 0 && this.currentScreen > 1) {
@@ -35,5 +40,14 @@ export class ProjectsComponent {
 
   changeHeaderColor() {
     this.backgroundService.setActiveBackgroundColor(this.backgroundColors[this.currentScreen - 1]);
+  }
+
+  changeScreen(isAfter: boolean): void {
+    if (isAfter && this.currentScreen < this.totalScreens) {
+      this.currentScreen = this.currentScreen + 1;
+    } else if (!isAfter && this.currentScreen > 1) {
+      this.currentScreen = this.currentScreen - 1;
+    }
+    this.changeHeaderColor();
   }
 }

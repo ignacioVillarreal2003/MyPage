@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, Renderer2} from '@angular/core';
+import {Component, ElementRef, HostListener, Renderer2, ViewChild} from '@angular/core';
 import {NgIf, NgStyle} from '@angular/common';
 import {BackgroundDetectorService} from '../../services/background-detector.service';
 
@@ -26,7 +26,6 @@ export class HeaderComponent {
 
     linkElement.forEach((element: HTMLElement): void => {
       this.backgroundService.activeBackgroundColor$.subscribe((color): void => {
-        console.log(color)
         if (this.isWhite(color)) {
           element.style.color = 'black';
         } else {
@@ -51,14 +50,24 @@ export class HeaderComponent {
 
   toggleNavBar(event: Event): void {
     const checkbox: HTMLInputElement = event.target as HTMLInputElement;
-    this.isNavBarActive = checkbox.checked;
     const body: HTMLElement = document.querySelector('body') as HTMLElement;
+
     if (checkbox.checked) {
-      this.backgroundService.setActiveBackgroundColor('#faabab')
-      body.style.overflowY = 'hidden';
+      this.isNavBarActive = checkbox.checked;
+      this.backgroundService.setActiveBackgroundColor('#faabab');
+      body.style.overflowY = 'hidden';     
+      setTimeout(() => {
+        const navBar: HTMLElement = document.querySelector('#navBar') as HTMLElement;       
+        navBar.classList.add('active');
+      }, 100);
     } else {
-      this.backgroundService.setActiveBackgroundColor(this.lastColor)
+      this.backgroundService.setActiveBackgroundColor(this.lastColor);
       body.style.overflowY = 'auto';
+      const navBar: HTMLElement = document.querySelector('#navBar') as HTMLElement;       
+      navBar.classList.remove('active');
+      setTimeout(() => {
+        this.isNavBarActive = checkbox.checked;
+      }, 400);
     }
   }
 

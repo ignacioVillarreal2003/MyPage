@@ -20,3 +20,68 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+@font-face {
+  font-family: 'Cannia';
+  src: url('/fonts/Cannia.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Milston';
+  src: url('/fonts/Milston.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Carola';
+  src: url('/fonts/Carola.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Runalto';
+  src: url('/fonts/Runalto.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nikolas';
+  src: url('/fonts/Nikolas.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Riffle Regular';
+  src: url('/fonts/Riffle Regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rollgates Luxury';
+  src: url('/fonts/Rollgates Luxury.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Zeantry';
+  src: url('/fonts/Zeantry.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Migasike';
+  src: url('/fonts/Migasike.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Qualey';
+  src: url('/fonts/Qualey.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ultima Bold';
+  src: url('/fonts/Ultima Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ultima Light';
+  src: url('/fonts/Ultima Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Ultima';
+  src: url('/fonts/Ultima.ttf') format('truetype');
+}

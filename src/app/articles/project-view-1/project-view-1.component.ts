@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgForOf, NgIf, NgStyle} from '@angular/common';
+import { BackgroundDetectorService } from '../../services/background-detector.service';
 
 @Component({
   selector: 'app-project-view-1',
@@ -18,7 +19,8 @@ export class ProjectView1Component {
   currentScreen = 1;
   totalScreens = 4;
   isScrolling = false;
-  progressStep = 0; // Paso intermedio de la animación
+
+  constructor(private backgroundService: BackgroundDetectorService) {}
 
   onScroll(event: WheelEvent) {
     if (this.isScrolling) return;
@@ -32,20 +34,20 @@ export class ProjectView1Component {
     if (this.currentScreen === 3 && event.deltaY > 0) {
       // Si estamos al final de la sección 200vh
       if (scrollPosition + window.innerHeight >= sectionHeight) {
-        this.currentScreen++;  // Cambiar a la siguiente sección
+        this.navigateToScreen(this.currentScreen + 1);
       }
     }
     // Si estamos en la sección 3 (con 200vh) y el usuario hace scroll hacia arriba
     else if (this.currentScreen === 3 && event.deltaY < 0) {
       // Si estamos al principio de la sección 200vh
       if (scrollPosition <= 0) {
-        this.currentScreen--;  // Cambiar a la sección anterior
+        this.navigateToScreen(this.currentScreen - 1);
       }
     }
       // Si estamos subiendo desde la sección 4 (o cualquier otra sección de 100vh)
     // hacia la sección de 200vh (sección 3)
     else if (event.deltaY < 0 && this.currentScreen === 4) {
-        this.currentScreen = 3;
+        this.navigateToScreen(3);
         // Usamos un setTimeout para aplicar el scroll después de un pequeño retraso
         setTimeout(() => {
           window.scrollTo({
@@ -55,9 +57,9 @@ export class ProjectView1Component {
     }
     // Para las secciones normales de 100vh
     else if (event.deltaY > 0 && this.currentScreen < this.totalScreens) {
-      this.currentScreen++;
+      this.navigateToScreen(this.currentScreen + 1);
     } else if (event.deltaY < 0 && this.currentScreen > 1) {
-      this.currentScreen--;
+      this.navigateToScreen(this.currentScreen - 1);
     }
   }
 
@@ -69,22 +71,41 @@ export class ProjectView1Component {
     return window.innerHeight; // Para las secciones normales de 100vh
   }
 
+  progressStep = 0;
+
   navigateToScreen(targetScreen: number): void {
     if (targetScreen === this.currentScreen) return;
 
     const direction = targetScreen > this.currentScreen ? 1 : -1;
-    const steps = Math.abs(targetScreen - this.currentScreen) * 3;
+    let toStep = 0
+    if (direction == 1) {
+      this.progressStep = 2 * (this.currentScreen - 1) + 1;
+      toStep = 2 * (targetScreen - 1) + 1;
+    } else {
+      this.progressStep = 2 * (this.currentScreen - 1);
+      toStep = 2 * (targetScreen - 1);
+    }
+    const totalSteps = this.progressStep + direction * toStep;
 
-    let stepIndex = 0;
+    this.currentScreen = targetScreen;
+    this.changeHeaderColor();
 
-    const interval = setInterval(() => {
+    const interval = setInterval(() => {      
       this.progressStep += direction;
 
-      if (++stepIndex === steps) {
+      if (this.progressStep == toStep) {
         clearInterval(interval);
-        this.currentScreen = targetScreen;
-        this.progressStep = 0; // Resetear los pasos intermedios
+        this.progressStep = 0;
       }
-    }, 400); // Tiempo entre cada cambio (0.4s)
+    }, 2000/totalSteps);
+  }
+
+  
+  ngOnInit(): void {
+    this.changeHeaderColor()
+  }
+
+  changeHeaderColor() {
+    this.backgroundService.setActiveBackgroundColor(this.backgroundColors[this.currentScreen - 1]);
   }
 }
