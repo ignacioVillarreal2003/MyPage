@@ -2,6 +2,7 @@
   width: 100%;
   height: 100vh;
   display: flex;
+  position: relative;
 }
 
 .about, .soon, .projects {
@@ -70,4 +71,10 @@
   .about {
     height: 50%;
   }
+}
+
+app-summary-card {
+  position: absolute;
+  top: 30%;
+  left: 0;
 }
