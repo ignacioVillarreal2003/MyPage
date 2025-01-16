@@ -1,0 +1,50 @@
+.shape-6 {
+    width: 800px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.circle {
+    flex: 1 1 calc(25% - 10px);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: rotateAnimation infinite cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation-duration: 10s;
+    transition: all 1s ease-in-out;
+
+}
+
+.semi-circle-1, .semi-circle-2 {
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.semi-circle-1 {
+    border-radius: 999px 0 0 999px;
+    background-color: #ff8130;
+    left: 0;
+}
+
+.semi-circle-2 {
+    border-radius: 0 999px 999px 0;
+    background-color: #ffc38b;
+    right: 0;
+}
+
+@keyframes rotateAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

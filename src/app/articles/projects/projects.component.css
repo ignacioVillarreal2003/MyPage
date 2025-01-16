@@ -7,14 +7,23 @@
 .project-preview {
   width: 100%;
   height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 30px 70px;
+  position: relative;
+  z-index: 2;
 }
 
-.project-preview h1 {
+.content h1 {
   font-size: clamp(30px, 10vw, 120px);
   color: white;
   animation: fadeInFromTop 0.6s forwards;
@@ -25,7 +34,7 @@
   line-height: 4rem;
 }
 
-.project-preview p {
+.content p {
   color: white;
   font-size: clamp(16px, 3vw, 26px);
   max-width: 1000px;
@@ -34,7 +43,7 @@
   animation: fadeInFromBottom 0.6s forwards;
 }
 
-.project-preview button {
+.content button {
   padding: 10px 45px;
   border: none;
   border-radius: 30px;
@@ -45,7 +54,7 @@
   animation: fadeInFromBottom 0.6s forwards;
 }
 
-.project-preview button:hover {
+.content button:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -63,6 +72,38 @@
   }
 }
 
+.background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+app-shape-12 {
+  display: block;
+  position: absolute;
+  bottom: -100px;
+  left: 100px;
+  offset-path: path('m0,0 c100,300 400,0, 800,200 c-700,100,-350,300,-200,250 q-500,-150,-600,-450');
+  offset-distance: 0%;
+  animation: followPath 10s cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes followPath {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+
+
+
 .progress-indicator {
   position: fixed;
   right: 20px;
@@ -72,6 +113,7 @@
   flex-direction: column;
   align-items: end;
   gap: 10px;
+  z-index: 3;
 }
 
 .progress-indicator .screen {

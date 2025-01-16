@@ -1,0 +1,129 @@
+.shape-11 {
+    width: 400px;
+    height: 200px;
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+}
+
+.eyes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: eyes 5s infinite ease-in-out;
+}
+
+.circle-1 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: white;
+    animation: eye 5s infinite ease-in-out;
+}
+
+.circle-2 {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: white;
+    animation: eye 5s infinite ease-in-out;
+}
+
+.mouth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes eye {
+    0% {
+        height: 70px;
+    }
+
+    40% {
+        height: 70px;
+    }
+
+    41% {
+        height: 5px;
+    }
+
+    42% {
+        height: 70px;
+    }
+
+    50% {
+        height: 70px;
+    }
+
+    51% {
+        height: 5px;
+    }
+
+    52% {
+        height: 70px;
+    }
+
+    62% {
+        height: 70px;
+    }
+
+    63% {
+        height: 5px;
+    }
+
+    64% {
+        height: 70px;
+    }
+
+    100% {
+        height: 70px;
+    }
+}
+
+@keyframes eyes {
+    0% {
+        left: 50%;
+    }
+
+    42% {
+        left: 50%;
+    }
+
+    44% {
+        left: 55%;
+    }
+
+    54% {
+        left: 55%;
+    }
+
+    56% {
+        left: 45%;
+    }
+
+    66% {
+        left: 45%;
+    }
+
+    70% {
+        left: 50%;
+    }
+
+    100% {
+        left: 50%;
+    }
+}

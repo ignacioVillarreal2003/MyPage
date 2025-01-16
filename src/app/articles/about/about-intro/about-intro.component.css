@@ -1,0 +1,65 @@
+.about-intro {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    padding: 60px;
+}
+
+.title span {
+    font-size: clamp(30px, 8vw, 160px);
+}
+
+.bouncing {
+    animation: bounce 1s ease forwards;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-100px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: white;
+}
+
+app-shape-2 {
+    position: absolute;
+    left: -80px;
+    bottom: -100px;
+}
+
+app-shape-3 {
+    position: absolute;
+    top: -100px;
+    right: -200px;
+}

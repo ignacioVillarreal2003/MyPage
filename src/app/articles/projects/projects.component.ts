@@ -1,13 +1,15 @@
 import {Component, ElementRef} from '@angular/core';
 import {NgIf, NgStyle} from '@angular/common';
 import {BackgroundDetectorService} from '../../services/background-detector.service';
+import { Shape12Component } from "../../shapes/shape-12/shape-12.component";
 
 @Component({
   selector: 'app-projects',
   imports: [
     NgStyle,
-    NgIf
-  ],
+    NgIf,
+    Shape12Component
+],
   templateUrl: './projects.component.html',
   standalone: true,
   styleUrl: './projects.component.css'
@@ -38,7 +40,7 @@ export class ProjectsComponent {
     this.changeHeaderColor()
   }
 
-  changeHeaderColor() {
+  changeHeaderColor() {    
     this.backgroundService.setActiveBackgroundColor(this.backgroundColors[this.currentScreen - 1]);
   }
 

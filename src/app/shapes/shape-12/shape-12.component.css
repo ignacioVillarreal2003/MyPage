@@ -1,0 +1,54 @@
+.shape-12 {
+    width: 600px;
+    height: 600px;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: animation-1 40s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.semi-circle-1 {
+    width: 50%;
+    height: 100%;
+    border-radius: 999px 0 0 999px;
+    background-color: #96e9ff;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.semi-circle-2 {
+    width: 50%;
+    height: 100%;
+    border-radius: 0 999px 999px 0;
+    background-color: #008aff;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.semi-circle-3 {
+    width: 60%;
+    height: 60%;
+    border-radius: 999px 0 0 999px;
+    background-color: #008aff;
+}
+
+.semi-circle-4 {
+    width: 60%;
+    height: 60%;
+    border-radius: 0 999px 999px 0;
+    background-color: #96e9ff;
+}
+
+@keyframes animation-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

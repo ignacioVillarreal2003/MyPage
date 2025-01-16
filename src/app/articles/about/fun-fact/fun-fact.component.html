@@ -1,0 +1,14 @@
+<section class="fun-fact">
+    <div class="content">
+        <h1 *ngFor="let fact of facts; let i = index" [class.active-fact]="i === indexFact">{{fact}}</h1>
+        <button (click)="randomFact()">Otra</button>
+    </div>
+    <div class="background bg-color">
+        <app-shape-4 [indexShape]="0"></app-shape-4>
+        <app-shape-4 [indexShape]="1"></app-shape-4>
+        <app-shape-4 [indexShape]="2"></app-shape-4>
+        <app-shape-4 [indexShape]="3"></app-shape-4>
+        <app-shape-4 [indexShape]="4"></app-shape-4>
+        <app-shape-4 [indexShape]="5"></app-shape-4>
+    </div>
+</section>

@@ -1,0 +1,79 @@
+.shape-10 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.semi-circle-1 {
+    width: 50%;
+    height: 100%;
+    border-radius: 999px 0 0 999px;
+}
+
+.semi-circle-2 {
+    width: 50%;
+    height: 100%;
+    border-radius: 0 999px 999px 0;
+}
+
+.animation-1 {
+    animation: animation-1 30s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.animation-2 {
+    animation: animation-2 30s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.animation-3 {
+    animation: animation-3 30s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@keyframes animation-1 {
+    0% {
+        transform: rotate(60deg);
+    }
+
+    60% {
+        transform: rotate(240deg);
+    }
+
+    100% {
+        transform: rotate(60deg);
+    }
+}
+
+@keyframes animation-2 {
+    0% {
+        transform: rotate(20deg);
+    }
+
+    60% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes animation-3 {
+    0% {
+        transform: rotate(80deg);
+    }
+
+    60% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(80deg);
+    }
+}

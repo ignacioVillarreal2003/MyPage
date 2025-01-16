@@ -1,0 +1,14 @@
+<section class="about-intro">
+    <div class="content">
+        <h1 class="title">
+            <span *ngFor="let letter of visibleTitle; let i = index" [class.bouncing]="bouncingLetters[i]"
+                [style.animationDelay]="i * 0.05 + 's'">
+                {{ letter }}
+            </span>
+        </h1>
+    </div>
+    <div class="background bg-color">
+        <app-shape-2></app-shape-2>
+        <app-shape-3></app-shape-3>
+    </div>
+</section>

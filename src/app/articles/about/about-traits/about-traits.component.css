@@ -1,0 +1,95 @@
+.about-traits {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    min-height: 220vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.traits {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+}
+
+.traits h2 {
+    font-size: clamp(26px, 4vw, 60px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.svg-1 {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+.svg-2 {
+    width: 60%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+path {
+    transition: d 1s cubic-bezier(0.165, 0.84, 0.44, 1), fill 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.why {
+    background-color: rgb(60, 59, 59);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all .4s cubic-bezier(0.23, 1, 0.320, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.why p {
+    color: white;
+}
+
+.text-visible {
+    opacity: 1;
+}
+
+@media (max-width: 900px) {
+    .content {
+        min-height: 120vh;
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(22, 22, 22);
+    width: 100%;
+    height: 100%;
+}

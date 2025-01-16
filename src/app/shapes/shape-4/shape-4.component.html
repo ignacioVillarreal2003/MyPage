@@ -1,0 +1,11 @@
+<div class="shape-4">
+    <div class="square-primary" [ngStyle]="{ rotate: shapes[indexShape].rotation, animationDelay: shapes[indexShape].animationDelay }">
+        <div class="semi-circle-1" [ngStyle]="{ background: shapes[indexShape].color1 }">
+            <div class="semi-circle-3" [ngStyle]="{ background: shapes[indexShape].color2 }"></div>
+        </div>
+        <div class="semi-circle-2" [ngStyle]="{ background: shapes[indexShape].color2 }">
+            <div class="semi-circle-4" [ngStyle]="{ background: shapes[indexShape].color1 }"></div>
+        </div>
+    </div>
+    <div class="square-secondary" [ngStyle]="{ background: shapes[indexShape].color3 }"></div>
+</div>

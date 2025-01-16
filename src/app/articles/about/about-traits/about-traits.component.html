@@ -1,0 +1,17 @@
+<div class="about-traits">
+    <div class="content" (mousemove)="onMouseMove($event)">
+        <div class="traits">
+            <h2>{{currentTextTitle}}</h2>
+            <svg class="svg-1" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg">
+                <path [attr.d]="currentPath" [attr.fill]="currentFill" />
+            </svg>
+            <svg class="svg-2" viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" (mouseenter)="isTextViewed = true; timeAnimation = 4000; triggerChangeAnimation()" (mouseleave)="isTextViewed = false; timeAnimation = 1000; triggerChangeAnimation()">
+                <path [attr.d]="currentPath" [attr.fill]="currentFill" />
+            </svg>
+        </div>
+        <div class="why" [class.text-visible]="isTextViewed">
+            <p>{{currentTextDescription}}</p>
+        </div>
+    </div>
+    <div class="background bg-color"></div>
+</div>

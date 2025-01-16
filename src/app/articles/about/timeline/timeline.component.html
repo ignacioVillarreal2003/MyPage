@@ -1,0 +1,15 @@
+<section class="timeline">
+    <div class="content">
+        <div class="block" *ngFor="let block of blocks; let i = index" [class.active]="blockIndex === i">
+            <h3>{{block.title}}</h3>
+            <p>{{block.content}}</p>
+        </div>
+        <div class="progress-indicator">
+            <button class="dot" *ngFor="let block of blocks; let i = index" [class.active]="blockIndex === i"
+                (click)="blockIndex = i"></button>
+        </div>
+    </div>
+    <div class="background bg-color" [ngStyle]="{ background: blocks[blockIndex].background}">
+        <app-shape-1 [indexColor]="blockIndex"></app-shape-1>
+    </div>
+</section>
