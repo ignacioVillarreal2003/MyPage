@@ -1,27 +1,36 @@
 <div class="home">
-  <a href="/about" class="about">
+  <a href="/about" class="about" (mouseenter)="activeHover(0)" (mouseleave)="disactiveHover(0)">
     <div class="content">
       <div class="title">
         <h2>Sobre mi</h2>
         <div class="underlined"></div>
       </div>
     </div>
+    <div class="background">
+      <div class="color"></div>
+    </div>
   </a>
   <div class="other-links">
-    <a href="/projects" class="projects">
+    <a href="/projects" class="projects" (mouseenter)="activeHover(1)" (mouseleave)="disactiveHover(1)">
       <div class="content">
         <div class="title">
           <h2>Proyectos</h2>
           <div class="underlined"></div>
         </div>
       </div>
+      <div class="background">
+        <div class="color"></div>
+      </div>
     </a>
-    <a href="/" class="soon">
+    <a href="/" class="soon" (mouseenter)="activeHover(2)" (mouseleave)="disactiveHover(2)">
       <div class="content">
         <div class="title">
           <h2>Pronto ...</h2>
           <div class="underlined"></div>
         </div>
+      </div>
+      <div class="background">
+        <div class="color"></div>
       </div>
     </a>
   </div>

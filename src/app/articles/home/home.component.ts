@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { BackgroundDetectorService } from '../../services/background-detector.service';
 import { SummaryCardComponent } from "../summary-card/summary-card.component";
 import { NgIf } from '@angular/common';
@@ -15,7 +15,8 @@ export class HomeComponent {
 
   constructor(
     private backgroundService: BackgroundDetectorService,
-    private summaryCardService: SummaryCardService
+    private summaryCardService: SummaryCardService,
+    private elRef: ElementRef
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +31,31 @@ export class HomeComponent {
 
   changeHeaderColor() {
     this.backgroundService.setActiveBackgroundColor("#f76c6c");
+  }
+
+  activeHover(index: number) {
+    const element1: HTMLElement = this.elRef.nativeElement.querySelector(".about h2") as HTMLElement;
+    const element2: HTMLElement = this.elRef.nativeElement.querySelector(".projects h2") as HTMLElement;
+    const element3: HTMLElement = this.elRef.nativeElement.querySelector(".soon h2") as HTMLElement;
+    if (index == 0) {
+      element1.classList.add("hover-text");
+    } else if (index == 1) {
+      element2.classList.add("hover-text");
+    } else if (index == 2) {
+      element3.classList.add("hover-text");
+    }
+  }
+
+  disactiveHover(index: number) {
+    const element1: HTMLElement = this.elRef.nativeElement.querySelector(".about h2") as HTMLElement;
+    const element2: HTMLElement = this.elRef.nativeElement.querySelector(".projects h2") as HTMLElement;
+    const element3: HTMLElement = this.elRef.nativeElement.querySelector(".soon h2") as HTMLElement;
+    if (index == 0) {
+      element1.classList.remove("hover-text");
+    } else if (index == 1) {
+      element2.classList.remove("hover-text");
+    } else if (index == 2) {
+      element3.classList.remove("hover-text");
+    }
   }
 }

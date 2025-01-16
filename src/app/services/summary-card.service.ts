@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class SummaryCardService {
 
   constructor() {
-    const storedValue = localStorage.getItem('summaryCardIsActive');
+    const storedValue = sessionStorage.getItem('summaryCardIsActive');
     this.isActive = storedValue ? JSON.parse(storedValue) : true;
   }
 
@@ -18,6 +18,6 @@ export class SummaryCardService {
 
   set isActive(value: boolean) {
     this._isActive = value;
-    localStorage.setItem('summaryCardIsActive', JSON.stringify(value));
+    sessionStorage.setItem('summaryCardIsActive', JSON.stringify(value));
   }
 }
