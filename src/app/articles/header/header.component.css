@@ -5,7 +5,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2vh 4vw;
-  z-index: 4;
+  z-index: 999;
 }
 
 .content {
@@ -37,6 +37,7 @@ header {
 
 .name span {
   color: white;
+  transition: all .8s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .name span:nth-child(1) {

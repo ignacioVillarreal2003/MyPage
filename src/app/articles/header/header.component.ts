@@ -26,6 +26,7 @@ export class HeaderComponent {
 
     linkElement.forEach((element: HTMLElement): void => {
       this.backgroundService.activeBackgroundColor$.subscribe((color): void => {
+        console.log("entra1", color);
         if (this.isWhite(color)) {
           element.style.color = 'black';
         } else {
@@ -34,8 +35,9 @@ export class HeaderComponent {
       });
     })
 
-    menuLines.forEach((element: HTMLElement): void => {
+    menuLines.forEach((element: HTMLElement): void => {      
       this.backgroundService.activeBackgroundColor$.subscribe((color): void => {
+        console.log("entra2", color);
         if (this.isWhite(color)) {
           element.style.stroke = 'black';
         } else {

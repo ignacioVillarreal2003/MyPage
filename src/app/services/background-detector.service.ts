@@ -6,10 +6,10 @@ import {BehaviorSubject, Observable} from 'rxjs';
 })
 export class BackgroundDetectorService {
 
-  private activeBackgroundColor: BehaviorSubject<string> = new BehaviorSubject<string>('white');
+  private activeBackgroundColor: BehaviorSubject<string> = new BehaviorSubject<string>('black');
   activeBackgroundColor$: Observable<any> = this.activeBackgroundColor.asObservable();
 
-  setActiveBackgroundColor(color: string): void {
+  setActiveBackgroundColor(color: string): void {    
     this.activeBackgroundColor.next(color);
   }
 }
