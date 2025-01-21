@@ -1,0 +1,67 @@
+.shape {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  animation: rotate 60s infinite ease;
+  transform-origin: center;
+}
+
+.circle {
+  transform-origin: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.semi-circle-left {
+  width: 50%;
+  height: 100%;
+  border-radius: 999px 0 0 999px;
+}
+
+.semi-circle-right {
+  width: 50%;
+  height: 100%;
+  border-radius: 0 999px 999px 0;
+}
+
+.c-1 {
+  animation-delay: 0s;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.c-1 .semi-circle-left {
+  background-color: #008aff;
+}
+
+.c-1 .semi-circle-right {
+  background-color: #96e9ff;
+}
+
+.c-2 {
+  animation-delay: .2s;
+  width: 80%;
+  height: 80%;
+  z-index: 1;
+}
+
+.c-2 .semi-circle-left {
+  background-color: #96e9ff;
+}
+
+.c-2 .semi-circle-right {
+  background-color: #008aff;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}

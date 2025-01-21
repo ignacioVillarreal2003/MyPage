@@ -18,7 +18,7 @@ export class ProjectsComponent {
 
   backgroundColors: string[] = ['#f76c6c', '#faabab', '#7cccbe', '#97c2d9', '#b1c0cb', '#70d1aa', '#403d66', '#4e61bd'];
   currentScreen: number = 1;
-  totalScreens: number = 8;
+  totalScreens: number = 6;
   isScrolling = false;
 
   constructor(private backgroundService: BackgroundDetectorService) {}
@@ -40,7 +40,7 @@ export class ProjectsComponent {
     this.changeHeaderColor()
   }
 
-  changeHeaderColor() {    
+  changeHeaderColor() {
     this.backgroundService.setActiveBackgroundColor(this.backgroundColors[this.currentScreen - 1]);
   }
 

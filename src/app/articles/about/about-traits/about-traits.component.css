@@ -2,9 +2,10 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+  background-color: rgb(22, 22, 22);
 }
 
-.content {
+.content-wrapper {
     width: 100%;
     min-height: 220vh;
     display: flex;
@@ -83,13 +84,4 @@ path {
     .content {
         min-height: 120vh;
     }
-}
-
-.background {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    background-color: rgb(22, 22, 22);
-    width: 100%;
-    height: 100%;
 }

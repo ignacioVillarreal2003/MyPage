@@ -2,19 +2,16 @@ import { Component, ElementRef } from '@angular/core';
 import { AboutIntroComponent } from "./about-intro/about-intro.component";
 import { AboutTraitsComponent } from "./about-traits/about-traits.component";
 import { TimelineComponent } from "./timeline/timeline.component";
-import { PassionsComponent } from "./passions/passions.component";
 import { FunFactComponent } from "./fun-fact/fun-fact.component";
-import { AboutEngineerComponent } from './about-engineer/about-engineer.component';
-import { Shape8Component } from '../../shapes/shape-8/shape-8.component';
-import { Shape9Component } from "../../shapes/shape-9/shape-9.component";
 import { AboutPhotoComponent } from "./about-photo/about-photo.component";
-import { Shape11Component } from "../../shapes/shape-11/shape-11.component";
 import { AboutFooterComponent } from "./about-footer/about-footer.component";
 import { BackgroundDetectorService } from '../../services/background-detector.service';
+import {AboutProjectsComponent} from './about-projects/about-projects.component';
+import {SkillsComponent} from './skills/skills.component';
 
 @Component({
   selector: 'app-about',
-  imports: [AboutIntroComponent, AboutTraitsComponent, TimelineComponent, PassionsComponent, FunFactComponent, AboutEngineerComponent, Shape8Component, Shape9Component, AboutPhotoComponent, AboutFooterComponent],
+  imports: [AboutIntroComponent, AboutTraitsComponent, TimelineComponent, FunFactComponent, AboutPhotoComponent, AboutFooterComponent, AboutProjectsComponent, SkillsComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
   standalone: true
@@ -35,6 +32,7 @@ export class AboutComponent {
     });
     if (activeElement) {
       const bgColor: string = getComputedStyle(activeElement).backgroundColor;
+      console.log(bgColor)
       this.backgroundService.setActiveBackgroundColor(bgColor);
     }
   }

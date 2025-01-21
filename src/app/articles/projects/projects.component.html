@@ -1,92 +1,57 @@
 <div class="projects" (wheel)="onScroll($event)" [ngStyle]="{ background: backgroundColors[currentScreen - 1]}">
   <section class="project-preview" *ngIf="currentScreen === 1">
-    <div class="content">
+    <div class="content-wrapper">
       <h1>Trello</h1>
       <p>Aplicación web para gestión de proyectos desarrollada con un enfoque full-stack. Incluye tableros, listas y
         tarjetas para organizar tareas, colaboración en tiempo real, asignación de usuarios, y funciones como etiquetas,
         comentarios y fechas límite. Implementada con Angular y ASP.NET Core.</p>
-      <button>Ver</button>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
-      <div class="circle"></div>
+      <a href="/project-1">Ver</a>
     </div>
   </section>
   <section class="project-preview" *ngIf="currentScreen === 2">
-    <div class="content">
+    <div class="content-wrapper">
       <h1>Kahoot</h1>
       <p>Aplicación web interactiva para crear y jugar cuestionarios en tiempo real. Permite a los usuarios diseñar
         preguntas personalizadas, unirse a partidas mediante códigos únicos y competir con otros participantes.
         Desarrollada con Angular y Node.</p>
-      <button>Ver</button>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
+      <a href="/project-2">Ver</a>
     </div>
   </section>
   <section class="project-preview" *ngIf="currentScreen === 3">
-    <div class="content">
+    <div class="content-wrapper">
       <h1>Instagram</h1>
       <p>Aplicación web para compartir y explorar contenido multimedia. Incluye funciones como publicaciones con fotos y
         descripciones, comentarios, likes, perfiles de usuario, y un feed dinámico. Desarrollada con Angular y ASP.NET
         Core.</p>
-      <button>Ver</button>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
+      <a href="/project-3">Ver</a>
     </div>
   </section>
   <section class="project-preview" *ngIf="currentScreen === 4">
-    <div class="content">
+    <div class="content-wrapper">
       <h1>Penca de Fútbol</h1>
       <p>Plataforma web para participar en predicciones de resultados de partidos de fútbol. Incluye creación de ligas
         privadas, registro de predicciones, cálculo automático de puntajes y clasificación. Desarrollé el frontend en
         Angular y el backend en Node.</p>
-      <button>Ver</button>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
+      <a href="/project-4">Ver</a>
     </div>
   </section>
   <section class="project-preview" *ngIf="currentScreen === 5">
-    <div class="content">
+    <div class="content-wrapper">
       <h1>Algoritmos genéticos</h1>
       <p>Desarrollé un juego donde los players deben llegar a una meta esquivando obstáculos, inspirado en El juego más
         difícil del mundo. Utilicé algoritmos genéticos para entrenar a los players. Las decisiones de movimiento
         (adelante, atrás, izquierda, derecha) se basan en un "cerebro" evolucionado a través de generaciones. Implementé
         el proyecto en Unity con C#.</p>
-      <button>Ver</button>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
+      <a href="/project-5">Ver</a>
     </div>
   </section>
   <section class="project-preview" *ngIf="currentScreen === 6">
-    <div class="content">
+    <div class="content-wrapper">
       <h1>Mentimeter</h1>
       <p>Aplicación web interactiva para crear encuestas y presentaciones en tiempo real. Permite a los usuarios diseñar
         preguntas, recopilar respuestas del público mediante códigos únicos y visualizar resultados en gráficos
         dinámicos. Desarrollé el frontend en Angular y el backend en ASP.NET Core.</p>
-      <button>Ver</button>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
-    </div>
-  </section>
-  <section class="project-preview" *ngIf="currentScreen === 7">
-    <div class="content">
-      <h1>Proyecto 7</h1>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
-    </div>
-  </section>
-  <section class="project-preview" *ngIf="currentScreen === 8">
-    <div class="content">
-      <h1>Proyecto 8</h1>
-    </div>
-    <div class="background">
-      <app-shape-12></app-shape-12>
+      <a href="/project-6">Ver</a>
     </div>
   </section>
 
@@ -104,10 +69,6 @@
       (click)="currentScreen = 5; changeHeaderColor()"></button>
     <button class="screen" [class.active]="currentScreen === 6"
       (click)="currentScreen = 6; changeHeaderColor()"></button>
-    <button class="screen" [class.active]="currentScreen === 7"
-      (click)="currentScreen = 7; changeHeaderColor()"></button>
-    <button class="screen" [class.active]="currentScreen === 8"
-      (click)="currentScreen = 8; changeHeaderColor()"></button>
     <button class="after" (click)="changeScreen(true)"></button>
   </div>
 </div>

@@ -1,11 +1,11 @@
 import { Component, QueryList, ViewChildren } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { randInt } from 'three/src/math/MathUtils.js';
-import { Shape4Component } from "../../../shapes/shape-4/shape-4.component";
+import {Shape7Component} from '../shapes/shape-7/shape-7.component';
 
 @Component({
   selector: 'app-fun-fact',
-  imports: [NgFor, Shape4Component],
+  imports: [NgFor, Shape7Component],
   templateUrl: './fun-fact.component.html',
   styleUrl: './fun-fact.component.css',
   standalone: true
@@ -23,7 +23,7 @@ export class FunFactComponent {
     "Siempre busco libros que desafíen mi forma de pensar. Es como actualizar el sistema operativo de mi mente.",
     "Soy capaz de resolver problemas de código complejo, pero todavía se me quema el arroz cuando cocino."
   ];
-  @ViewChildren(Shape4Component) shapeComponents!: QueryList<Shape4Component>;
+  @ViewChildren(Shape7Component) shapeComponents!: QueryList<Shape7Component>;
 
   randomFact(): void {
     let newFact = randInt(0, this.facts.length - 1);

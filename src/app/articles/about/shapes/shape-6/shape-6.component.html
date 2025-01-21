@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid meet">
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="120s" repeatCount="indefinite" />
+    <g *ngFor="let circle of ring1; let i = index" [attr.transform]="'rotate(' + (i * step1) + ' 100 100)'">
+      <path d="M 95 10 A 3 3 0 0 1 105 10" [attr.fill]="colors[indexColor].color1" style="transition: all 0.3s ease-in-out" />
+      <path d="M 95 10 A 3 3 0 0 0 105 10" [attr.fill]="colors[indexColor].color2" style="transition: all 0.3s ease-in-out" />
+    </g>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="-360 100 100" dur="120s" repeatCount="indefinite" />
+    <g *ngFor="let circle of ring2; let i = index" [attr.transform]="'rotate(' + (i * step2) + ' 100 100)'">
+      <path d="M 95 25 A 3 3 0 0 1 105 25" [attr.fill]="colors[indexColor].color1" style="transition: all 0.3s ease-in-out" />
+      <path d="M 95 25 A 3 3 0 0 0 105 25" [attr.fill]="colors[indexColor].color2" style="transition: all 0.3s ease-in-out" />
+    </g>
+  </g>
+</svg>

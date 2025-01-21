@@ -1,9 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-about-traits',
-  imports: [NgIf],
+  imports: [],
   templateUrl: './about-traits.component.html',
   styleUrl: './about-traits.component.css',
   standalone: true

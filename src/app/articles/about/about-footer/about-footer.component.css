@@ -1,40 +1,45 @@
 .about-footer {
     width: 100%;
-    overflow: hidden;
+  height: 110vh;
+  overflow: hidden;
     position: relative;
+  background-color: white;
 }
 
-.content {
+.content-wrapper {
     width: 100%;
-    height: 110vh;
+  height: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20%;
+  flex-direction: column;
+  gap: 30px;
+    padding: 20px;
 }
 
-.content h1 {
+h1 {
     font-size: clamp(24px, 5vw, 40px);
     max-width: 800px;
     text-align: center;
     text-anchor: middle;
-    color: white;
+    color: black;
 }
 
-.background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    background-color: #161616;
+.network {
+  display: flex;
+  gap: 30px;
 }
 
-app-shape-11 {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
+.network a {
+  text-decoration: none;
+  color: black;
+  font-size: clamp(16px, 5vw, 26px);
+  text-transform: uppercase;
+  transition: color .2s ease-out;
+}
+
+.network a:hover {
+  color: #7d5454;
 }

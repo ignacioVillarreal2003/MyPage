@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 import { NgStyle, NgFor } from '@angular/common';
-import { Shape1Component } from "../../../shapes/shape-1/shape-1.component";
+import {Shape6Component} from '../shapes/shape-6/shape-6.component';
+import {BackgroundDetectorService} from '../../../services/background-detector.service';
 
 @Component({
   selector: 'app-timeline',
-  imports: [NgStyle, NgFor, Shape1Component],
+  imports: [NgStyle, NgFor, Shape6Component],
   templateUrl: './timeline.component.html',
   styleUrl: './timeline.component.css',
   standalone: true
@@ -42,4 +43,11 @@ export class TimelineComponent {
     "background": "#149cff"
   }
   ];
+
+  constructor(private backgroundService: BackgroundDetectorService) { }
+
+  changeBackground(): void {
+    const bgColor: string = this.blocks[this.blockIndex].background;
+    this.backgroundService.setActiveBackgroundColor(bgColor);
+  }
 }

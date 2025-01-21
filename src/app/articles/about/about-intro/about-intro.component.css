@@ -1,65 +1,78 @@
 .about-intro {
     width: 100%;
+    height: 100vh;
     overflow: hidden;
     position: relative;
+  background-color: #000000;
 }
 
-.content {
+.content-wrapper {
+  position: relative;
+  z-index: 1;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px;
+  background-color: rgba(24, 24, 24, 0.3);
+  backdrop-filter: blur(5px);
 }
 
 .title {
-    display: flex;
-    padding: 60px;
+  font-size: clamp(24px, 5vw, 50px);
+  color: white;
 }
 
-.title span {
-    font-size: clamp(30px, 8vw, 160px);
+.description {
+  font-size: clamp(20px, 5vw, 40px);
+  max-width: 1400px;
+  color: white;
 }
 
-.bouncing {
-    animation: bounce 1s ease forwards;
+.description span {
+  background-color: #ff3200;
+  padding: 0 8px;
+  border-radius: 5px;
+  color: white;
 }
 
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    30% {
-        transform: translateY(-100px);
-    }
-    50% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.background {
-    width: 100%;
-    height: 100%;
+app-shape-1 {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    background-color: white;
+  left: -10%;
+  bottom: -5%;
+  width: 40%;
+  z-index: 0;
+  animation: scale-up-center 0.3s ease-in-out forwards;
 }
 
 app-shape-2 {
     position: absolute;
-    left: -80px;
-    bottom: -100px;
+  top: -5%;
+  right: -5%;
+  width: 45%;
+  z-index: 0;
+  animation: scale-up-center 0.3s ease-in-out forwards;
 }
 
-app-shape-3 {
-    position: absolute;
-    top: -100px;
-    right: -200px;
+@keyframes scale-up-center {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  app-shape-1 {
+    width: 65%;
+  }
+
+  app-shape-2 {
+    width: 60%;
+  }
 }

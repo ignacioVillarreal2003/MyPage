@@ -1,11 +1,10 @@
-import {Component, ElementRef, HostListener, Renderer2, ViewChild} from '@angular/core';
-import {NgIf, NgStyle} from '@angular/common';
+import {Component, ElementRef} from '@angular/core';
+import {NgIf} from '@angular/common';
 import {BackgroundDetectorService} from '../../services/background-detector.service';
 
 @Component({
   selector: 'app-header',
   imports: [
-    NgStyle,
     NgIf
   ],
   templateUrl: './header.component.html',
@@ -26,7 +25,6 @@ export class HeaderComponent {
 
     linkElement.forEach((element: HTMLElement): void => {
       this.backgroundService.activeBackgroundColor$.subscribe((color): void => {
-        console.log("entra1", color);
         if (this.isWhite(color)) {
           element.style.color = 'black';
         } else {
@@ -35,9 +33,8 @@ export class HeaderComponent {
       });
     })
 
-    menuLines.forEach((element: HTMLElement): void => {      
+    menuLines.forEach((element: HTMLElement): void => {
       this.backgroundService.activeBackgroundColor$.subscribe((color): void => {
-        console.log("entra2", color);
         if (this.isWhite(color)) {
           element.style.stroke = 'black';
         } else {
@@ -57,15 +54,15 @@ export class HeaderComponent {
     if (checkbox.checked) {
       this.isNavBarActive = checkbox.checked;
       this.backgroundService.setActiveBackgroundColor('#faabab');
-      body.style.overflowY = 'hidden';     
+      body.style.overflowY = 'hidden';
       setTimeout(() => {
-        const navBar: HTMLElement = document.querySelector('#navBar') as HTMLElement;       
+        const navBar: HTMLElement = document.querySelector('#navBar') as HTMLElement;
         navBar.classList.add('active');
       }, 100);
     } else {
       this.backgroundService.setActiveBackgroundColor(this.lastColor);
       body.style.overflowY = 'auto';
-      const navBar: HTMLElement = document.querySelector('#navBar') as HTMLElement;       
+      const navBar: HTMLElement = document.querySelector('#navBar') as HTMLElement;
       navBar.classList.remove('active');
       setTimeout(() => {
         this.isNavBarActive = checkbox.checked;

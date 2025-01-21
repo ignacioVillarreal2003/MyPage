@@ -11,7 +11,7 @@
   overflow: hidden;
 }
 
-.content {
+.content-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -23,7 +23,7 @@
   z-index: 2;
 }
 
-.content h1 {
+.content-wrapper h1 {
   font-size: clamp(30px, 10vw, 120px);
   color: white;
   animation: fadeInFromTop 0.6s forwards;
@@ -34,7 +34,7 @@
   line-height: 4rem;
 }
 
-.content p {
+.content-wrapper p {
   color: white;
   font-size: clamp(16px, 3vw, 26px);
   max-width: 1000px;
@@ -43,7 +43,7 @@
   animation: fadeInFromBottom 0.6s forwards;
 }
 
-.content button {
+.content-wrapper a {
   padding: 10px 45px;
   border: none;
   border-radius: 30px;
@@ -54,7 +54,7 @@
   animation: fadeInFromBottom 0.6s forwards;
 }
 
-.content button:hover {
+.content-wrapper a:hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -71,38 +71,6 @@
     transform: translateY(-50%);
   }
 }
-
-.background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-app-shape-12 {
-  display: block;
-  position: absolute;
-  bottom: -100px;
-  left: 100px;
-  offset-path: path('m0,0 c100,300 400,0, 800,200 c-700,100,-350,300,-200,250 q-500,-150,-600,-450');
-  offset-distance: 0%;
-  animation: followPath 10s cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-fill-mode: forwards;
-}
-
-
-@keyframes followPath {
-  0% {
-    offset-distance: 0%;
-  }
-  100% {
-    offset-distance: 100%;
-  }
-}
-
-
-
 
 .progress-indicator {
   position: fixed;
@@ -167,22 +135,22 @@ app-shape-12 {
     gap: 10px;
     flex-direction: row;
   }
-  
+
   .progress-indicator .screen {
     width: 5px;
     height: 20px;
   }
-  
+
   .progress-indicator .screen.active {
     height: 40px;
     width: 5px;
   }
-  
+
   .progress-indicator .screen:hover {
     height: 40px;
     width: 5px;
   }
-  
+
   .progress-indicator .before, .progress-indicator .after {
     height: 20px;
     width: 20px;

@@ -1,22 +1,2 @@
-<svg viewBox="0 0 600 200" style="width: 100%; height: auto;">
-    <defs>
-      <clipPath id="clip-top">
-        <rect x="0" y="0" width="100%" height="100" />
-      </clipPath>
-      <clipPath id="clip-bottom">
-        <rect x="0" y="100" width="100%" height="100" />
-      </clipPath>
-    </defs>
-  
-    <rect x="0" y="0" width="100%" height="50%" fill="#fcfcfb" />
-    <rect x="0" y="100" width="100%" height="50%" fill="#f7f6f6" />
-  
-    <g *ngFor="let group of groups" [attr.clip-path]="'url(#' + group.clipPath + ')'">
-      <g class="circle" *ngFor="let circle of group.circles" [attr.transform]="'translate(' + circle.x + ', ' + circle.y + ')'">
-        <circle cx="50" cy="50" r="50" fill="#00bfff" />
-        <path d="M50,0 A50,50 0 0,1 50,100 L50,50 Z" [attr.fill]="group.color1" />
-        <path d="M50,0 A50,50 0 0,0 50,100 L50,50 Z" [attr.fill]="group.color2" />
-      </g>
-    </g>
-  </svg>
-  
+<app-header></app-header>
+<router-outlet></router-outlet>
